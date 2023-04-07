@@ -20,7 +20,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgba(241, 242, 243, 0); display: block;" width="37px" height="37px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
                     <g transform="rotate(0 50 50)">
                         <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#85a2b6">
-                            <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="33.333333333333336s" begin="-30.555555555555557s" repeatCount="indefinite"></animate>
+                             <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="33.333333333333336s" begin="-30.555555555555557s" repeatCount="indefinite"></animate>
                         </rect>
                     </g><g transform="rotate(30 50 50)">
                     <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#85a2b6">
@@ -69,43 +69,43 @@
                 </g>
                 </svg>
             </p>
-            <img src="./assets/sun.png" alt="">
-            <p style="font-size: 33px; margin-bottom: 10px">Clear Sky</p>
+            <img id="currentIcon" src="" alt="">
+            <p id="currentState" style="font-size: 33px; margin-bottom: 10px">Clear Sky</p>
             <p id="currentDate" style="margin-bottom: 10px">Thursday 14:20 PM</p>
             <p style="margin-bottom: 10px">
-                <span>Wind 5.7 m/s</span>
-                <span>Pressure 1015hPa</span>
+                <span style="margin-right:115px ">Wind <span id="windSpeed">5.7</span> m/s</span>
+                <span  >Pressure <span id="pressure">1015</span>hPa</span>
             </p>
             <p style="margin-bottom: 10px">
-                <span>Humidity 50%</span>
-                <span>Cloudness 0%</span>
+                <span style="margin-right: 110px">Humidity <span id="humidity">50</span>%</span>
+                <span>Cloudness <span id="cloudness"></span> %</span>
             </p>
 
         </div>
         <div class="page_row">
             <div class="page">
                 <h1>Saturday</h1>
-                <img src="./assets/rain.png" alt="">
-                <p class="num">22</p>
-                <p class="text">Partly Cloudy</p>
+                <img id="firstIcon" src="" alt="">
+                <p id="firstTemp" class="num">22</p>
+                <p id="firstState" class="text">Partly Cloudy</p>
             </div>
             <div class="page">
                 <h1>Saturday</h1>
-                <img src="./assets/heavy-rain.png" alt="">
-                <p class="num">22</p>
-                <p class="text">Heavy Rain</p>
+                <img id="secondIcon" src="" alt="">
+                <p id="secondTemp" class="num">22</p>
+                <p id="secondState" class="text">Heavy Rain</p>
             </div>
             <div class="page">
                 <h1>Saturday</h1>
-                <img src="./assets/rainy.png" alt="">
-                <p class="num">22</p>
-                <p class="text">Rain</p>
+                <img id="thirdIcon" src="" alt="">
+                <p id="thirdTemp" class="num">22</p>
+                <p id="thirdState" class="text">Rain</p>
             </div>
             <div class="page">
                 <h1>Saturday</h1>
-                <img src="./assets/sun.png" alt="">
-                <p class="num">22</p>
-                <p class="text">Clear Sky</p>
+                <img id="forthIcon" src="" alt="">
+                <p id="forthTemp" class="num">22</p>
+                <p id="forthState" class="text">Clear Sky</p>
             </div>
         </div>
 
