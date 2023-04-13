@@ -85,7 +85,17 @@ img{
     right: 10px;
     cursor: pointer;
 }
+.info{
+    display: flex;
+    flex-direction: column;
+}
+.info_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
 
+}
 /*.page:hover{*/
 /*    border: white 1px solid ;*/
 /*    color: coral ;*/
