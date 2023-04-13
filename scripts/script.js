@@ -15,44 +15,50 @@ function renderContent(content){
     //Main Block
     document.querySelector("#currentTemp").innerText = Math.round(content.current.temp) + "°"
     document.querySelector("#city").innerText = content.timezone
-    document.querySelector("#currentDate").innerText = new Date(content.current.dt * 1000).toLocaleDateString();
+        document.querySelector("#currentDate").innerText = new Date(content.current.dt * 1000).toLocaleDateString('en-US',{weekday:'long'});
     document.querySelector("#pressure").innerText = content.current.pressure
     document.querySelector('#windSpeed').innerText = content.current.wind_speed
     document.querySelector('#humidity').innerText = content.current.humidity
     document.querySelector('#cloudness').innerText = content.current.clouds
     document.querySelector('#currentState').innerText = content.current.weather[0].main
     // document.querySelector('#currentIcon').src = setIcon(content.current.weather[0].icon)
-    //ChangeIcon
-    const iconLocation = content.current.weather[0].icon
-    document.querySelector('#currentIcon').src = `https://openweathermap.org/img/wn/${iconLocation}.png`
+    const mainIcon = content.current.weather[0].icon
+    document.querySelector('#currentIcon').src = `https://openweathermap.org/img/wn/${mainIcon}.png`
 
 
     //Block1
-    const iconLocation1 = content.daily[0].weather[0].icon
-    document.querySelector('#firstIcon').src = `https://openweathermap.org/img/wn/${iconLocation1}.png`
-    document.querySelector('#firstTemp').innerText = Math.round(content.daily[0].temp.day) + "°"
-    document.querySelector('#firstState').innerText = content.daily[0].weather[0].main
-    // document.querySelector('#firstIcon').src = setIcon(content.daily[0].weather[0].icon)
+    // const iconLocation1 = content.daily[0].weather[0].icon
+    // document.querySelector('#firstIcon').src = `https://openweathermap.org/img/wn/${iconLocation1}.png`
+    // document.querySelector('#firstTemp').innerText = Math.round(content.daily[0].temp.day) + "°"
+    // document.querySelector('#firstState').innerText = content.daily[0].weather[0].main
+    // // document.querySelector('#firstIcon').src = setIcon(content.daily[0].weather[0].icon)
+    //
+    //
+    // //Block2
+    // const iconLocation2 = content.daily[1].weather[0].icon
+    // document.querySelector('#secondIcon').src = `https://openweathermap.org/img/wn/${iconLocation2}.png`
+    // document.querySelector('#secondTemp').innerText = Math.round(content.daily[1].temp.day) + "°"
+    // document.querySelector('#secondState').innerText = content.daily[1].weather[0].main
+    //
+    // //Block3
+    // const iconLocation3 = content.daily[2].weather[0].icon
+    // document.querySelector('#thirdIcon').src = `https://openweathermap.org/img/wn/${iconLocation3}.png`
+    // document.querySelector('#thirdTemp').innerText = Math.round(content.daily[2].temp.day) + "°"
+    // document.querySelector('#thirdState').innerText = content.daily[2].weather[0].main
+    //
+    // //Block4
+    // const iconLocation4 = content.daily[3].weather[0].icon
+    // document.querySelector('#forthIcon').src = `https://openweathermap.org/img/wn/${iconLocation4}.png`
+    // document.querySelector('#forthTemp').innerText = Math.round(content.daily[3].temp.day) + "°"
+    // document.querySelector('#forthState').innerText = content.daily[3].weather[0].main
 
-
-    //Block2
-    const iconLocation2 = content.daily[1].weather[0].icon
-    document.querySelector('#secondIcon').src = `https://openweathermap.org/img/wn/${iconLocation2}.png`
-    document.querySelector('#secondTemp').innerText = Math.round(content.daily[1].temp.day) + "°"
-    document.querySelector('#secondState').innerText = content.daily[1].weather[0].main
-
-    //Block3
-    const iconLocation3 = content.daily[2].weather[0].icon
-    document.querySelector('#thirdIcon').src = `https://openweathermap.org/img/wn/${iconLocation3}.png`
-    document.querySelector('#thirdTemp').innerText = Math.round(content.daily[2].temp.day) + "°"
-    document.querySelector('#thirdState').innerText = content.daily[2].weather[0].main
-
-    //Block4
-    const iconLocation4 = content.daily[3].weather[0].icon
-    document.querySelector('#forthIcon').src = `https://openweathermap.org/img/wn/${iconLocation4}.png`
-    document.querySelector('#forthTemp').innerText = Math.round(content.daily[3].temp.day) + "°"
-    document.querySelector('#forthState').innerText = content.daily[3].weather[0].main
-
+    for(let i=1; i<=4; i++){
+        const iconLocation = content.daily[i].weather[0].icon
+        document.querySelector('#day' + i).innerText = new Date(content.daily[i].dt*1000).toLocaleDateString('en-US', {weekday:'long'})
+        document.querySelector('#pic'+ i).src = `https://openweathermap.org/img/wn/${iconLocation}.png`
+        document.querySelector('#temp' + i).innerText = Math.round(content.daily[i].temp.day) + "°"
+        document.querySelector('#state' + i).innerText = content.daily[i].weather[0].main
+    }
 
 }
 function getWeather(){

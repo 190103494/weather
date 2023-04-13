@@ -1,0 +1,41 @@
+@media screen and (max-width: 767px) {
+    .main_page{
+        margin-bottom: 15px;
+    }
+    .page{
+        flex: 100%;
+        margin-bottom: 15px;
+    }
+    #city{
+        font-size: 25px;
+    }
+}
+@media (max-width: 1199px) and (min-width: 767px) {
+    .main_page{
+        margin-bottom: 8px;
+    }
+    .page{
+        display: flex;
+        justify-content: space-around;
+        flex: 40%;
+        margin-bottom: 8px;
+        padding: 10px;
+    }
+    .page:nth-child(1), .page:nth-child(3){
+        margin-right: 8px;
+    }
+    .page h1,p{
+        font-size: 20px;
+        margin: auto;
+    }
+    .num{
+        margin-bottom: auto;
+    }
+
+
+
+}
+
+/*@media screen and (min-width: 1200px) {*/
+/*    !* стили для lg-устройств *!*/
+/*}*/
